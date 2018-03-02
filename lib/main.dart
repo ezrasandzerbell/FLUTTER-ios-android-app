@@ -85,7 +85,7 @@ class MyApp extends StatelessWidget {
       );
     }
 
-    Widget footer = new Container(
+    Widget footerRow = new Container(
       height: 50.0,
       decoration: new BoxDecoration(color: Colors.black),
       child: new Row(
@@ -95,6 +95,17 @@ class MyApp extends StatelessWidget {
           signInLink('SIGN IN'),
         ],
       ),
+    );
+
+    Widget footer = new Container(
+      child: new Column(
+      crossAxisAlignment: CrossAxisAlignment.center,
+      mainAxisSize: MainAxisSize.max,
+      mainAxisAlignment: MainAxisAlignment.end,
+      children: <Widget>[
+        footerRow
+      ],
+      )
     );
 
     return new MaterialApp(
