@@ -1,7 +1,7 @@
 
 
 import 'package:flutter/material.dart';
-
+import 'package:flutter/rendering.dart';
 void main() {
   runApp(new MyApp());
 }
@@ -44,8 +44,26 @@ class MyApp extends StatelessWidget {
       ),
     );
 
+    Widget getStartedButton() {
+      return new Align(
+        alignment: const Alignment(0.0, -0.2),
+        child: new FlatButton(
+          child: new Text (
+              "GET STARTED",
+              style: new TextStyle(
+                fontSize: 15.0,
+                fontWeight: FontWeight.w400,
+                color: const Color(0xFFFAFAFA),
+          ),
+        ),
+          color: const Color(0xFF424242),
+          onPressed: () {
+            // Perform some action
+          },
+        ),
+      );
+    }
 
-//    footer
     Column signInLink(String label) {
 
       return new Column(
@@ -85,7 +103,7 @@ class MyApp extends StatelessWidget {
       );
     }
 
-    Widget footerRow = new Container(
+    Widget footer = new Container(
       height: 50.0,
       decoration: new BoxDecoration(color: Colors.black),
       child: new Row(
@@ -97,46 +115,28 @@ class MyApp extends StatelessWidget {
       ),
     );
 
-    Widget footer = new Container(
-      child: new Column(
-      crossAxisAlignment: CrossAxisAlignment.center,
-      mainAxisSize: MainAxisSize.max,
-      mainAxisAlignment: MainAxisAlignment.end,
-      children: <Widget>[
-        footerRow
-      ],
-      )
-    );
-
     return new MaterialApp(
       title: 'Flutter Demo',
       home: new Scaffold(
-        body: new ListView(
-          children: [
-            style360Logo,
-            titleTextSection,
-            subtitleTextSection,
-            footer,
-          ],
+        body: new Container(
+          decoration: new BoxDecoration(
+            image: new DecorationImage(
+              image: new AssetImage('images/dog.jpg'),
+              fit: BoxFit.cover,
+            ),
+          ),
+          child: new ListView(
+            children: [
+              style360Logo,
+              titleTextSection,
+              subtitleTextSection,
+              getStartedButton(),
+            ],
+          ),
         ),
+        bottomNavigationBar: footer,
       ),
     );
   }
 }
 
-class BaseLayout extends StatelessWidget{
-  @override
-  Widget build(BuildContext context){
-    return new Scaffold(
-      body: new Container(
-        decoration: new BoxDecoration(
-          image: new DecorationImage(
-            image: new AssetImage('images/dog.jpg'),
-            fit: BoxFit.cover,
-          ),
-        ),
-        child: null /* add child content content here */,
-      ),
-    );
-  }
-}
