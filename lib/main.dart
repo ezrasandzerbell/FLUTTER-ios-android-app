@@ -1,7 +1,7 @@
-
-
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
+import 'package:carousel/carousel.dart';
+
 void main() {
   runApp(new MyApp());
 }
@@ -103,6 +103,8 @@ class MyApp extends StatelessWidget {
       );
     }
 
+
+
     Widget footer = new Container(
       height: 50.0,
       decoration: new BoxDecoration(color: Colors.black),
@@ -112,6 +114,16 @@ class MyApp extends StatelessWidget {
           existingAccountLink('Already have an account?'),
           signInLink('SIGN IN'),
         ],
+      ),
+    );
+
+    Widget testCarousel = new SizedBox(
+      height: 240.0,
+      child: new Carousel(
+        children: [
+          new NetworkImage('http://www.catster.com/wp-content/uploads/2014/08/An-albino-cat.jpg'),
+          new NetworkImage('http://images.mentalfloss.com/sites/default/files/styles/insert_main_wide_image/public/iStock_88936441_SMALL.jpg')
+        ].map((netImage) => new Image(image: netImage)).toList(),
       ),
     );
 
@@ -130,6 +142,7 @@ class MyApp extends StatelessWidget {
               style360Logo,
               titleTextSection,
               subtitleTextSection,
+              testCarousel,
               getStartedButton(),
             ],
           ),

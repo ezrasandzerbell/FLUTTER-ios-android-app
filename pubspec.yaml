@@ -2,6 +2,8 @@ name: sightworks_flutter
 description: A new Flutter application.
 
 dependencies:
+
+  carousel: ^0.0.1
   flutter:
     sdk: flutter
 
