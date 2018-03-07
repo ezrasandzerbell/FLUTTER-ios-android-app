@@ -121,8 +121,8 @@ class MyApp extends StatelessWidget {
       height: 240.0,
       child: new Carousel(
         children: [
-          new NetworkImage('http://www.catster.com/wp-content/uploads/2014/08/An-albino-cat.jpg'),
-          new NetworkImage('http://images.mentalfloss.com/sites/default/files/styles/insert_main_wide_image/public/iStock_88936441_SMALL.jpg')
+          new AssetImage('images/img1.jpg'),
+          new AssetImage('images/img2.jpg')
         ].map((netImage) => new Image(image: netImage)).toList(),
       ),
     );
