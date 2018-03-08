@@ -12,7 +12,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
 
     Widget style360Logo = new Container(
-      padding: const EdgeInsets.only(top: 100.0),
+      padding: const EdgeInsets.only(top: 100.0, bottom: 200.0),
       child: new Image.asset(
         'images/style.png',
         width: 180.0,
@@ -21,7 +21,7 @@ class MyApp extends StatelessWidget {
     );
 
     Widget titleTextSection = new Container(
-      padding: const EdgeInsets.only(left: 80.0, right: 80.0, top: 30.0, bottom: 20.0),
+      padding: const EdgeInsets.only(left: 80.0, right: 80.0, top: 300.0, bottom: 20.0),
         child: new Text(
         ''' Welcome to Style360''',
             textAlign: TextAlign.center,
@@ -48,7 +48,7 @@ class MyApp extends StatelessWidget {
 
     Widget getStartedButton() {
       return new Align(
-        alignment: const Alignment(0.0, -0.2),
+        alignment: const Alignment(0.0, -1.0),
         child: new FlatButton(
           child: new Text (
               "GET STARTED",
@@ -141,6 +141,31 @@ class MyApp extends StatelessWidget {
       ),
     );
 
+    Widget textCarousel = new SizedBox.expand(
+      child: new Carousel(
+        children: [
+          new ListView(
+            children: [
+              titleTextSection,
+              subtitleTextSection,
+            ],
+          ),
+          new ListView(
+            children: [
+              titleTextSection,
+              subtitleTextSection,
+            ],
+          ),
+          new ListView(
+            children: [
+              titleTextSection,
+              subtitleTextSection,
+            ],
+          ),
+        ].map((carouselTextItem) => carouselTextItem).toList(),
+      )
+    );
+
     return new MaterialApp(
       title: 'Flutter Demo',
       home: new Scaffold(
@@ -149,14 +174,17 @@ class MyApp extends StatelessWidget {
             new PageView(
               children: [testBGCarousel],
             ),
+
+            new PageView(
+              children: [textCarousel],
+            ),
             new ListView(
+              physics: new NeverScrollableScrollPhysics(),
               children: [
                 style360Logo,
-                titleTextSection,
-                subtitleTextSection,
                 getStartedButton(),
               ],
-            )
+            ),
            ]
         ),
         bottomNavigationBar: footer,
