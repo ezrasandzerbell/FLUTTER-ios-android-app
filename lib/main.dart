@@ -28,6 +28,7 @@ class MyApp extends StatelessWidget {
         style: new TextStyle(
           fontSize: 35.0,
           fontWeight: FontWeight.w500,
+          color: const Color(0xFFeceff1)
         ),
       ),
     );
@@ -39,7 +40,8 @@ class MyApp extends StatelessWidget {
         textAlign: TextAlign.center,
         style: new TextStyle(
             fontSize: 15.0,
-            fontWeight: FontWeight.w400
+            fontWeight: FontWeight.w400,
+            color: const Color(0xFFeceff1)
         ),
       ),
     );
@@ -117,35 +119,45 @@ class MyApp extends StatelessWidget {
       ),
     );
 
-    Widget testCarousel = new SizedBox(
-      height: 240.0,
+//    Carousel Widget for on page (not background images)
+//
+//    Widget testCarousel = new SizedBox(
+//      height: 100.0,
+//      child: new Carousel(
+//        children: [
+//          new AssetImage('images/img1.jpg'),
+//          new AssetImage('images/img2.jpg')
+//        ].map((netImage) => new Image(image: netImage)).toList(),
+//      ),
+//    );
+
+    Widget testBGCarousel = new SizedBox.expand(
       child: new Carousel(
         children: [
           new AssetImage('images/img1.jpg'),
-          new AssetImage('images/img2.jpg')
-        ].map((netImage) => new Image(image: netImage)).toList(),
+          new AssetImage('images/img2.jpg'),
+          new AssetImage('images/img3.jpg'),
+        ].map((bgImg) => new Image(image: bgImg, width: 3000.0, height: 3000.0, fit: BoxFit.cover)).toList(),
       ),
     );
 
     return new MaterialApp(
       title: 'Flutter Demo',
       home: new Scaffold(
-        body: new Container(
-          decoration: new BoxDecoration(
-            image: new DecorationImage(
-              image: new AssetImage('images/dog.jpg'),
-              fit: BoxFit.cover,
+        body: new Stack (
+          children: <Widget>[
+            new PageView(
+              children: [testBGCarousel],
             ),
-          ),
-          child: new ListView(
-            children: [
-              style360Logo,
-              titleTextSection,
-              subtitleTextSection,
-              testCarousel,
-              getStartedButton(),
-            ],
-          ),
+            new ListView(
+              children: [
+                style360Logo,
+                titleTextSection,
+                subtitleTextSection,
+                getStartedButton(),
+              ],
+            )
+           ]
         ),
         bottomNavigationBar: footer,
       ),
