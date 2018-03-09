@@ -6,11 +6,26 @@ void main() {
   runApp(new MyApp());
 }
 
-class MyApp extends StatelessWidget {
-  @override
+//
+//class MySplashScreen extends StatelessWidget {
+//  @override
+//
+//  Widget build(BuildContext context) {
+//    Widget style360Logo = new Container(
+//      padding: const EdgeInsets.only(top: 100.0, bottom: 200.0),
+//      child: new Image.asset(
+//        'images/style.png',
+//        width: 180.0,
+//        height: 180.0,
+//      ),
+//    );
+//    return style360Logo;
+//  }
+//
+//}
 
-  Widget build(BuildContext context) {
-
+class MyAppHomePage extends StatelessWidget {
+  @override Widget build(BuildContext context) {
     Widget style360Logo = new Container(
       padding: const EdgeInsets.only(top: 100.0, bottom: 200.0),
       child: new Image.asset(
@@ -22,13 +37,13 @@ class MyApp extends StatelessWidget {
 
     Widget titleTextSection = new Container(
       padding: const EdgeInsets.only(left: 80.0, right: 80.0, top: 300.0, bottom: 20.0),
-        child: new Text(
+      child: new Text(
         ''' Welcome to Style360''',
-            textAlign: TextAlign.center,
+        textAlign: TextAlign.center,
         style: new TextStyle(
-          fontSize: 35.0,
-          fontWeight: FontWeight.w500,
-          color: const Color(0xFFeceff1)
+            fontSize: 35.0,
+            fontWeight: FontWeight.w500,
+            color: const Color(0xFFeceff1)
         ),
       ),
     );
@@ -46,25 +61,25 @@ class MyApp extends StatelessWidget {
       ),
     );
 
-    Widget getStartedButton() {
-      return new Align(
-        alignment: const Alignment(0.0, -1.0),
-        child: new FlatButton(
-          child: new Text (
-              "GET STARTED",
-              style: new TextStyle(
-                fontSize: 15.0,
-                fontWeight: FontWeight.w400,
-                color: const Color(0xFFFAFAFA),
+
+    Widget getStartedButton = new Align(
+      alignment: const Alignment(0.0, -1.0),
+      child: new FlatButton(
+        child: new Text (
+          "GET STARTED",
+          style: new TextStyle(
+            fontSize: 15.0,
+            fontWeight: FontWeight.w400,
+            color: const Color(0xFFFAFAFA),
           ),
         ),
-          color: const Color(0xFF424242),
-          onPressed: () {
-            // Perform some action
-          },
-        ),
-      );
-    }
+        color: const Color(0xFF424242),
+        onPressed: (){
+          Navigator.of(context).pushNamed(signUpPage.routeName);
+        },
+      ),
+    );
+
 
     Column signInLink(String label) {
 
@@ -142,34 +157,32 @@ class MyApp extends StatelessWidget {
     );
 
     Widget textCarousel = new SizedBox.expand(
-      child: new Carousel(
-        children: [
-          new ListView(
-            children: [
-              titleTextSection,
-              subtitleTextSection,
-            ],
-          ),
-          new ListView(
-            children: [
-              titleTextSection,
-              subtitleTextSection,
-            ],
-          ),
-          new ListView(
-            children: [
-              titleTextSection,
-              subtitleTextSection,
-            ],
-          ),
-        ].map((carouselTextItem) => carouselTextItem).toList(),
-      )
+        child: new Carousel(
+          children: [
+            new ListView(
+              children: [
+                titleTextSection,
+                subtitleTextSection,
+              ],
+            ),
+            new ListView(
+              children: [
+                titleTextSection,
+                subtitleTextSection,
+              ],
+            ),
+            new ListView(
+              children: [
+                titleTextSection,
+                subtitleTextSection,
+              ],
+            ),
+          ].map((carouselTextItem) => carouselTextItem).toList(),
+        )
     );
 
-    return new MaterialApp(
-      title: 'Flutter Demo',
-      home: new Scaffold(
-        body: new Stack (
+    Widget homePageView = new Scaffold(
+      body: new Stack (
           children: <Widget>[
             new PageView(
               children: [testBGCarousel],
@@ -182,14 +195,68 @@ class MyApp extends StatelessWidget {
               physics: new NeverScrollableScrollPhysics(),
               children: [
                 style360Logo,
-                getStartedButton(),
+                getStartedButton,
               ],
             ),
-           ]
-        ),
-        bottomNavigationBar: footer,
+          ]
       ),
+      bottomNavigationBar: footer,
+    );
+    return homePageView;
+  }
+}
+class MyApp extends StatelessWidget {
+  @override
+
+    Widget build(BuildContext context) {
+    var routes = <String, WidgetBuilder> {
+      signUpPage.routeName: (BuildContext context) => new signUpPage(title: "signUpPage"),
+    };
+
+    return new MaterialApp(
+      title: 'Flutter Demo',
+      home: new MyAppHomePage(),
+      routes: routes,
     );
   }
 }
 
+class signUpPage extends StatefulWidget {
+  signUpPage({Key key, this.title}) : super(key: key);
+
+  static const String routeName = "/signUpPage";
+
+  final String title;
+
+  @override
+  _signUpPageState createState() => new _signUpPageState();
+}
+
+/// // 1. After the page has been created, register it with the app routes 
+/// routes: <String, WidgetBuilder>{
+///   signUpPage.routeName: (BuildContext context) => new signUpPage(title: "signUpPage"),
+/// },
+///
+/// // 2. Then this could be used to navigate to the page.
+/// Navigator.pushNamed(context, signUpPage.routeName);
+///
+
+class _signUpPageState extends State<signUpPage> {
+  @override
+  Widget build(BuildContext context) {
+    return new Scaffold(
+      appBar: new AppBar(
+        title: new Text(widget.title),
+      ),
+      body: new Container(),
+      floatingActionButton: new FloatingActionButton(
+        onPressed: _onFloatingActionButtonPressed,
+        tooltip: 'Add',
+        child: new Icon(Icons.add),
+      ),
+    );
+  }
+
+  void _onFloatingActionButtonPressed() {
+  }
+}
