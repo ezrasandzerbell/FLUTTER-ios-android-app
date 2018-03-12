@@ -221,42 +221,136 @@ class MyApp extends StatelessWidget {
   }
 }
 
-class signUpPage extends StatefulWidget {
+class signUpPage extends StatelessWidget {
   signUpPage({Key key, this.title}) : super(key: key);
 
   static const String routeName = "/signUpPage";
 
   final String title;
 
-  @override
-  _signUpPageState createState() => new _signUpPageState();
-}
-
-/// // 1. After the page has been created, register it with the app routes 
-/// routes: <String, WidgetBuilder>{
-///   signUpPage.routeName: (BuildContext context) => new signUpPage(title: "signUpPage"),
-/// },
-///
-/// // 2. Then this could be used to navigate to the page.
-/// Navigator.pushNamed(context, signUpPage.routeName);
-///
-
-class _signUpPageState extends State<signUpPage> {
-  @override
-  Widget build(BuildContext context) {
-    return new Scaffold(
-      appBar: new AppBar(
-        title: new Text(widget.title),
-      ),
-      body: new Container(),
-      floatingActionButton: new FloatingActionButton(
-        onPressed: _onFloatingActionButtonPressed,
-        tooltip: 'Add',
-        child: new Icon(Icons.add),
+  @override Widget build(BuildContext context) {
+    Widget style360Logo = new Container(
+      padding: const EdgeInsets.only(top: 100.0, bottom: 50.0),
+      child: new Image.asset(
+        'images/style.png',
+        width: 180.0,
+        height: 180.0,
       ),
     );
-  }
 
-  void _onFloatingActionButtonPressed() {
+    Widget forgotPasswordLink = new Container(
+      padding: const EdgeInsets.only(left: 80.0, right: 80.0, top: 20.0, bottom: 20.0),
+      child: new Text(
+        ''' Forgot Password? ''',
+        textAlign: TextAlign.center,
+        style: new TextStyle(
+            fontSize: 15.0,
+            fontWeight: FontWeight.w500,
+            color: const Color(0xFFf735e9)
+        ),
+      ),
+    );
+
+
+    Widget signUpButton = new Align(
+      child: new FlatButton(
+        child: new Text (
+          "SIGN IN",
+          style: new TextStyle(
+            fontSize: 15.0,
+            fontWeight: FontWeight.w400,
+            color: const Color(0xFFFAFAFA),
+          ),
+        ),
+        color: const Color(0xFF424242),
+        onPressed: (){
+          Navigator.of(context).pushNamed(signUpPage.routeName);
+        },
+      ),
+    );
+
+
+    Column signInLink(String label) {
+
+      return new Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          new Container(
+            child: new Text(
+              label,
+              style: new TextStyle(
+                  fontSize: 16.0,
+                  fontWeight: FontWeight.w400,
+                  color: const Color(0xFFf735e9)
+              ),
+            ),
+          ),
+        ],
+      );
+    }
+
+
+    Column existingAccountLink(String label) {
+
+      return new Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          new Container(
+            child: new Text(
+              label,
+              style: new TextStyle(
+                  fontSize: 16.0,
+                  fontWeight: FontWeight.w400,
+                  color: const Color(0xFFeceff1)
+              ),
+            ),
+          ),
+        ],
+      );
+    }
+
+
+
+    Widget footer = new Container(
+      height: 50.0,
+      decoration: new BoxDecoration(color: Colors.black),
+      child: new Row(
+        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+        children: [
+          existingAccountLink('Already have an account?'),
+          signInLink('SIGN IN'),
+        ],
+      ),
+    );
+
+    Widget backgroundImage = new Container(
+        decoration: new BoxDecoration(
+          image: new DecorationImage(
+            image: new AssetImage("images/img1.jpg"),
+            colorFilter: new ColorFilter.mode(Colors.black.withOpacity(0.8), BlendMode.srcATop),
+            fit: BoxFit.cover,
+          ),
+        )
+    );
+
+    Widget homePageView = new Scaffold(
+      body: new Stack (
+          children: <Widget>[
+            new PageView(
+              children: [backgroundImage],
+            ),
+            new ListView(
+              physics: new NeverScrollableScrollPhysics(),
+              children: [
+                style360Logo,
+                signUpButton,
+                forgotPasswordLink
+              ],
+            ),
+          ]
+      ),
+      bottomNavigationBar: footer,
+    );
+    return homePageView;
   }
 }
