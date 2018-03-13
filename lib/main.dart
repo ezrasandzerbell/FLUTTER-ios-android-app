@@ -74,12 +74,12 @@ class MyAppHomePage extends StatelessWidget {
           ),
         ),
         color: const Color(0xFF424242),
+        padding: const EdgeInsets.only(left: 80.0, right: 80.0),
         onPressed: (){
           Navigator.of(context).pushNamed(signUpPage.routeName);
         },
       ),
     );
-
 
     Column signInLink(String label) {
 
@@ -146,15 +146,16 @@ class MyAppHomePage extends StatelessWidget {
 //      ),
 //    );
 
-    Widget testBGCarousel = new SizedBox.expand(
+    Widget testBGCarousel = new Container(
       child: new Carousel(
         children: [
           new AssetImage('images/img1.jpg'),
           new AssetImage('images/img2.jpg'),
           new AssetImage('images/img3.jpg'),
-        ].map((bgImg) => new Image(image: bgImg, width: 3000.0, height: 3000.0, fit: BoxFit.cover)).toList(),
+        ].map((bgImg) => new Image(image: bgImg, width: 1500.0, height: 1500.0, fit: BoxFit.cover)).toList(),
       ),
     );
+
 
     Widget textCarousel = new SizedBox.expand(
         child: new Carousel(
@@ -230,11 +231,11 @@ class signUpPage extends StatelessWidget {
 
   @override Widget build(BuildContext context) {
     Widget style360Logo = new Container(
-      padding: const EdgeInsets.only(top: 100.0, bottom: 50.0),
+      padding: const EdgeInsets.only(top: 70.0, bottom: 50.0),
       child: new Image.asset(
         'images/style.png',
-        width: 180.0,
-        height: 180.0,
+        width: 130.0,
+        height: 130.0,
       ),
     );
 
@@ -252,7 +253,7 @@ class signUpPage extends StatelessWidget {
     );
 
 
-    Widget signUpButton = new Align(
+    Widget signInButton = new Align(
       child: new FlatButton(
         child: new Text (
           "SIGN IN",
@@ -263,6 +264,7 @@ class signUpPage extends StatelessWidget {
           ),
         ),
         color: const Color(0xFF424242),
+        padding: const EdgeInsets.only(left: 100.0, right: 100.0),
         onPressed: (){
           Navigator.of(context).pushNamed(signUpPage.routeName);
         },
@@ -311,6 +313,43 @@ class signUpPage extends StatelessWidget {
 
 
 
+    Widget signInForm = new Container (
+        padding: const EdgeInsets.only(bottom: 50.0),
+      child: new Column(
+              children: <Widget> [
+                new ListTile(
+                  title: new Theme(
+                    data: Theme.of(context).copyWith(
+                      primaryColor: const Color(0xFFf735e9), // underline color with focus
+                      hintColor: Colors.white, // underline color without focus
+                    ),
+                    child: new TextField(
+                      style: new TextStyle(color: const Color(0xFFeceff1)),
+                      decoration: new InputDecoration(
+                        hintText: "Username",
+                      ),
+                    ),
+                  ),
+                ),
+                new ListTile(
+                  title: new Theme(
+                    data: Theme.of(context).copyWith(
+                      primaryColor: const Color(0xFFf735e9), // underline color with focus
+                      hintColor: Colors.white, // underline color without focus
+                    ),
+                    child: new TextField(
+                      style: new TextStyle(color: const Color(0xFFeceff1)),
+                      decoration: new InputDecoration(
+                        hintText: "Password",
+                      ),
+                    ),
+                  ),
+                ),
+              ]
+          )
+      );
+
+
     Widget footer = new Container(
       height: 50.0,
       decoration: new BoxDecoration(color: Colors.black),
@@ -343,7 +382,8 @@ class signUpPage extends StatelessWidget {
               physics: new NeverScrollableScrollPhysics(),
               children: [
                 style360Logo,
-                signUpButton,
+                signInForm,
+                signInButton,
                 forgotPasswordLink
               ],
             ),
