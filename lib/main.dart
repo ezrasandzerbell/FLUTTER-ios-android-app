@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'my-app-homepage.dart';
 import 'sign-in-page.dart';
+import 'sign-up-p1.dart';
 
 void main() {
   runApp(new MyApp());
@@ -11,6 +12,7 @@ class MyApp extends StatelessWidget {
 
     Widget build(BuildContext context) {
     var routes = <String, WidgetBuilder> {
+      signUpPageOne.routeName: (BuildContext context) => new signUpPageOne(title: "signUpPageOne"),
       signInPage.routeName: (BuildContext context) => new signInPage(title: "signInPage"),
     };
 

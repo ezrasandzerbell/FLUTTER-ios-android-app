@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
+import 'main-footer.dart';
 
 class signInPage extends StatelessWidget {
   signInPage({Key key, this.title}) : super(key: key);
@@ -71,75 +72,42 @@ class signInPage extends StatelessWidget {
     }
 
 
-    Column existingAccountLink(String label) {
 
-      return new Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: [
-          new Container(
-            child: new Text(
-              label,
-              style: new TextStyle(
-                  fontSize: 16.0,
-                  fontWeight: FontWeight.w400,
-                  color: const Color(0xFFeceff1)
-              ),
-            ),
+
+
+    var formThemeDefault = Theme.of(context).copyWith(
+      primaryColor: const Color(0xFFf735e9), // underline color with focus
+      hintColor: Colors.white, // underline color without focus
+    );
+
+    Widget formTextFieldDefault(arg) {
+      return new Theme(
+        data: formThemeDefault,
+        child: new TextField(
+          style: new TextStyle(color: const Color(0xFFeceff1)),
+          decoration: new InputDecoration(
+            hintText: arg,
           ),
-        ],
+        ),
       );
-    }
-
-
+    };
 
     Widget signInForm = new Container (
         padding: const EdgeInsets.only(bottom: 50.0),
         child: new Column(
             children: <Widget> [
               new ListTile(
-                title: new Theme(
-                  data: Theme.of(context).copyWith(
-                    primaryColor: const Color(0xFFf735e9), // underline color with focus
-                    hintColor: Colors.white, // underline color without focus
-                  ),
-                  child: new TextField(
-                    style: new TextStyle(color: const Color(0xFFeceff1)),
-                    decoration: new InputDecoration(
-                      hintText: "Username",
-                    ),
-                  ),
-                ),
+                title: formTextFieldDefault("Email")
               ),
               new ListTile(
-                title: new Theme(
-                  data: Theme.of(context).copyWith(
-                    primaryColor: const Color(0xFFf735e9), // underline color with focus
-                    hintColor: Colors.white, // underline color without focus
-                  ),
-                  child: new TextField(
-                    style: new TextStyle(color: const Color(0xFFeceff1)),
-                    decoration: new InputDecoration(
-                      hintText: "Password",
-                    ),
-                  ),
-                ),
+                title: formTextFieldDefault("Password")
               ),
             ]
         )
     );
 
 
-    Widget footer = new Container(
-      height: 50.0,
-      decoration: new BoxDecoration(color: Colors.black),
-      child: new Row(
-        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-        children: [
-          existingAccountLink('Already have an account?'),
-          signInLink('SIGN IN'),
-        ],
-      ),
-    );
+
 
     Widget backgroundImage = new Container(
         decoration: new BoxDecoration(
@@ -168,7 +136,7 @@ class signInPage extends StatelessWidget {
             ),
           ]
       ),
-      bottomNavigationBar: footer,
+      bottomNavigationBar: footer(context),
     );
     return homePageView;
   }

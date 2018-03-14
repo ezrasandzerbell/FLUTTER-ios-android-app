@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'package:carousel/carousel.dart';
-import 'sign-in-page.dart';
+import 'sign-up-p1.dart';
+import 'main-footer.dart';
 
 class MyAppHomePage extends StatelessWidget {
   @override Widget build(BuildContext context) {
@@ -55,75 +56,10 @@ class MyAppHomePage extends StatelessWidget {
         color: const Color(0xFF424242),
         padding: const EdgeInsets.only(left: 80.0, right: 80.0),
         onPressed: (){
-          Navigator.of(context).pushNamed(signInPage.routeName);
+          Navigator.of(context).pushNamed(signUpPageOne.routeName);
         },
       ),
     );
-
-    Column signInLink(String label) {
-
-      return new Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: [
-          new Container(
-            child: new Text(
-              label,
-              style: new TextStyle(
-                  fontSize: 16.0,
-                  fontWeight: FontWeight.w400,
-                  color: const Color(0xFFf735e9)
-              ),
-            ),
-          ),
-        ],
-      );
-    }
-
-
-    Column existingAccountLink(String label) {
-
-      return new Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: [
-          new Container(
-            child: new Text(
-              label,
-              style: new TextStyle(
-                  fontSize: 16.0,
-                  fontWeight: FontWeight.w400,
-                  color: const Color(0xFFeceff1)
-              ),
-            ),
-          ),
-        ],
-      );
-    }
-
-
-
-    Widget footer = new Container(
-      height: 50.0,
-      decoration: new BoxDecoration(color: Colors.black),
-      child: new Row(
-        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-        children: [
-          existingAccountLink('Already have an account?'),
-          signInLink('SIGN IN'),
-        ],
-      ),
-    );
-
-//    Carousel Widget for on page (not background images)
-//
-//    Widget testCarousel = new SizedBox(
-//      height: 100.0,
-//      child: new Carousel(
-//        children: [
-//          new AssetImage('images/img1.jpg'),
-//          new AssetImage('images/img2.jpg')
-//        ].map((netImage) => new Image(image: netImage)).toList(),
-//      ),
-//    );
 
     Widget testBGCarousel = new Container(
       child: new Carousel(
@@ -179,7 +115,7 @@ class MyAppHomePage extends StatelessWidget {
             ),
           ]
       ),
-      bottomNavigationBar: footer,
+      bottomNavigationBar: footer(context),
     );
     return homePageView;
   }

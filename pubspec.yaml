@@ -27,6 +27,7 @@ flutter:
   uses-material-design: true
   assets:
       - images/style.png
+      - images/camera.png
       - images/img1.jpg
       - images/img2.jpg
       - images/img3.jpg
