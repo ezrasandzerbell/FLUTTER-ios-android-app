@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'package:carousel/carousel.dart';
-import 'sign-up-page.dart';
+import 'sign-in-page.dart';
 
 class MyAppHomePage extends StatelessWidget {
   @override Widget build(BuildContext context) {
@@ -55,7 +55,7 @@ class MyAppHomePage extends StatelessWidget {
         color: const Color(0xFF424242),
         padding: const EdgeInsets.only(left: 80.0, right: 80.0),
         onPressed: (){
-          Navigator.of(context).pushNamed(signUpPage.routeName);
+          Navigator.of(context).pushNamed(signInPage.routeName);
         },
       ),
     );

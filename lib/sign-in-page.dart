@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 
-class signUpPage extends StatelessWidget {
-  signUpPage({Key key, this.title}) : super(key: key);
+class signInPage extends StatelessWidget {
+  signInPage({Key key, this.title}) : super(key: key);
 
-  static const String routeName = "/signUpPage";
+  static const String routeName = "/signInPage";
 
   final String title;
 
@@ -45,7 +45,7 @@ class signUpPage extends StatelessWidget {
         color: const Color(0xFF424242),
         padding: const EdgeInsets.only(left: 100.0, right: 100.0),
         onPressed: (){
-          Navigator.of(context).pushNamed(signUpPage.routeName);
+          Navigator.of(context).pushNamed(signInPage.routeName);
         },
       ),
     );
