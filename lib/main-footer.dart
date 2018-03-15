@@ -4,6 +4,7 @@ import 'sign-up-services.dart';
 import 'sign-up-p1.dart';
 import 'sign-in-page.dart';
 import 'day-hour-availability.dart';
+import 'sign-up-location.dart';
 
 var whiteColor = const Color(0xFFeceff1);
 var pinkColor = const Color(0xFFf735e9);
@@ -34,6 +35,11 @@ Widget footerLink(String label, Color colorCode, BuildContext context, routeCont
 
             case "dayHourAvailability": {
               Navigator.of(context).pushNamed(dayHourAvailability.routeName);
+            }
+            break;
+
+            case "signUpLocation": {
+              Navigator.of(context).pushNamed(signUpLocation.routeName);
             }
             break;
           }

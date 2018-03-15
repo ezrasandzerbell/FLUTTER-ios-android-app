@@ -31,6 +31,7 @@ flutter:
       - images/img1.jpg
       - images/img2.jpg
       - images/img3.jpg
+      - images/googleMap.png
 
 
   # To add assets to your application, add an assets section, like this:
