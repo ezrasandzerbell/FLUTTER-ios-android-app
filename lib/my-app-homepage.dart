@@ -61,6 +61,20 @@ class MyAppHomePage extends StatelessWidget {
       ),
     );
 
+
+
+//    Carousel Widget for on page (not background images)
+//
+//    Widget testCarousel = new SizedBox(
+//      height: 100.0,
+//      child: new Carousel(
+//        children: [
+//          new AssetImage('images/img1.jpg'),
+//          new AssetImage('images/img2.jpg')
+//        ].map((netImage) => new Image(image: netImage)).toList(),
+//      ),
+//    );
+
     Widget testBGCarousel = new Container(
       child: new Carousel(
         children: [

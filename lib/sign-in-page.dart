@@ -86,7 +86,6 @@ class signInPage extends StatelessWidget {
         decoration: new BoxDecoration(
           image: new DecorationImage(
             image: new AssetImage("images/img1.jpg"),
-            colorFilter: new ColorFilter.mode(Colors.black.withOpacity(0.8), BlendMode.srcATop),
             fit: BoxFit.cover,
           ),
         )
