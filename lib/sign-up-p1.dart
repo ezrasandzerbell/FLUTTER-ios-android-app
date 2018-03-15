@@ -36,8 +36,19 @@ class signUpPageOne extends StatelessWidget {
       );
     }
 
+//    Widget tosAgreeCheckbox() {
+//      return new Container (
+//          child: new CheckboxListTile(
+//            title: new Text('I agree to the Terms and Conditions'),
+//            value: true,
+//            onChanged: (bool value){
+//            }
+//
+//          )
+//      );
+//    }
 
-    Widget signInForm = new Container (
+    Widget signUpForm = new Container (
         padding: const EdgeInsets.only(bottom: 50.0),
         child: new Column(
             children: <Widget> [
@@ -65,7 +76,7 @@ class signUpPageOne extends StatelessWidget {
       child: new Row(
         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         children: [
-          footerLink('CONTINUE', Colors.grey, context),
+          footerLink('CONTINUE', Colors.grey, context,  "signUpServices"),
         ],
       ),
     );
@@ -80,7 +91,7 @@ class signUpPageOne extends StatelessWidget {
               physics: new NeverScrollableScrollPhysics(),
               children: [
                 style360Logo,
-                signInForm
+                signUpForm
               ],
             ),
           ]

@@ -51,30 +51,6 @@ class signInPage extends StatelessWidget {
       ),
     );
 
-
-    Column signInLink(String label) {
-
-      return new Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: [
-          new Container(
-            child: new Text(
-              label,
-              style: new TextStyle(
-                  fontSize: 16.0,
-                  fontWeight: FontWeight.w400,
-                  color: const Color(0xFFf735e9)
-              ),
-            ),
-          ),
-        ],
-      );
-    }
-
-
-
-
-
     var formThemeDefault = Theme.of(context).copyWith(
       primaryColor: const Color(0xFFf735e9), // underline color with focus
       hintColor: Colors.white, // underline color without focus
@@ -106,9 +82,6 @@ class signInPage extends StatelessWidget {
         )
     );
 
-
-
-
     Widget backgroundImage = new Container(
         decoration: new BoxDecoration(
           image: new DecorationImage(
@@ -136,7 +109,7 @@ class signInPage extends StatelessWidget {
             ),
           ]
       ),
-      bottomNavigationBar: footer(context),
+      bottomNavigationBar: landingPageFooter(context),
     );
     return homePageView;
   }

@@ -115,7 +115,7 @@ class MyAppHomePage extends StatelessWidget {
             ),
           ]
       ),
-      bottomNavigationBar: footer(context),
+      bottomNavigationBar: landingPageFooter(context),
     );
     return homePageView;
   }
