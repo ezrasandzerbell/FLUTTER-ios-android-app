@@ -118,8 +118,7 @@ class fullScreenDialogueState extends State<fullScreenDialogue> {
 
     return await showDialog<bool>(
       context: context,
-      builder: (BuildContext context) {
-        return new AlertDialog(
+      child: new AlertDialog(
           content: new Text(
               'Discard new event?',
               style: dialogTextStyle
@@ -138,9 +137,8 @@ class fullScreenDialogueState extends State<fullScreenDialogue> {
                 }
             )
           ],
-        );
-      },
-    ) ?? false;
+        ),
+    );
   }
 
   @override
