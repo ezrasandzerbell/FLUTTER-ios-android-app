@@ -32,35 +32,7 @@ class DateTimeItem extends StatelessWidget {
         style: theme.textTheme.subhead,
         child: new Row(
             children: <Widget>[
-              new Expanded(
-                  child: new Container(
-                      padding: const EdgeInsets.symmetric(vertical: 8.0),
-                      decoration: new BoxDecoration(
-                          border: new Border(bottom: new BorderSide(color: theme.dividerColor))
-                      ),
-                      child: new InkWell(
-                          onTap: () {
-                            showDatePicker(
-                                context: context,
-                                initialDate: date,
-                                firstDate: date.subtract(const Duration(days: 30)),
-                                lastDate: date.add(const Duration(days: 30))
-                            )
-                                .then<Null>((DateTime value) {
-                              if (value != null)
-                                onChanged(new DateTime(value.year, value.month, value.day, time.hour, time.minute));
-                            });
-                          },
-                          child: new Row(
-                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                              children: <Widget>[
-                                new Text(new DateFormat('EEE, MMM d yyyy').format(date)),
-                                const Icon(Icons.arrow_drop_down, color: Colors.black54),
-                              ]
-                          )
-                      )
-                  )
-              ),
+
               new Container(
                   margin: const EdgeInsets.only(left: 8.0),
                   padding: const EdgeInsets.symmetric(vertical: 8.0),
@@ -147,7 +119,7 @@ class fullScreenDialogueState extends State<fullScreenDialogue> {
 
     return new Scaffold(
       appBar: new AppBar(
-          title: const Text('New event'),
+          title: const Text('Day of the Week'),
           actions: <Widget> [
             new FlatButton(
                 child: new Text('SAVE', style: theme.textTheme.body1.copyWith(color: Colors.white)),
@@ -159,25 +131,9 @@ class fullScreenDialogueState extends State<fullScreenDialogue> {
       ),
       body: new Form(
           onWillPop: _onWillPop,
-          child: new ListView(
-              padding: const EdgeInsets.all(16.0),
+          child: new Row(
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: <Widget>[
-                new Container(
-                    padding: const EdgeInsets.symmetric(vertical: 8.0),
-                    decoration: new BoxDecoration(
-                        border: new Border(bottom: new BorderSide(color: theme.dividerColor))
-                    ),
-                    alignment: Alignment.bottomLeft,
-                    child: new Text('Event name', style: theme.textTheme.display2)
-                ),
-                new Container(
-                    padding: const EdgeInsets.symmetric(vertical: 8.0),
-                    decoration: new BoxDecoration(
-                        border: new Border(bottom: new BorderSide(color: theme.dividerColor))
-                    ),
-                    alignment: Alignment.bottomLeft,
-                    child: new Text('Location', style: theme.textTheme.title.copyWith(color: Colors.black54))
-                ),
                 new Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: <Widget>[
@@ -206,33 +162,12 @@ class fullScreenDialogueState extends State<fullScreenDialogue> {
                             });
                           }
                       ),
-                      const Text('All-day'),
                     ]
                 ),
-                new Container(
-                    decoration: new BoxDecoration(
-                        border: new Border(bottom: new BorderSide(color: theme.dividerColor))
-                    ),
-                    child: new Row(
-                        children: <Widget> [
-                          new Checkbox(
-                              value: _allDayValue,
-                              onChanged: (bool value) {
-                                setState(() {
-                                  _allDayValue = value;
-                                  _saveNeeded = true;
-                                });
-                              }
-                          ),
-                          const Text('All-day'),
-                        ]
-                    )
-                )
               ]
                   .map((Widget child) {
                 return new Container(
-                    padding: const EdgeInsets.symmetric(vertical: 8.0),
-                    height: 96.0,
+                    padding: const EdgeInsets.only(top: 48.0),
                     child: child
                 );
               })

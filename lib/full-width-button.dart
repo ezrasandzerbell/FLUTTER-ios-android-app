@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
+import 'full-screen-dialog.dart';
 
 
 Widget fullWidthButton(String label, Color colorCode, BuildContext context, routeContext, [availabilityHours]) {
@@ -22,21 +23,7 @@ Widget fullWidthButton(String label, Color colorCode, BuildContext context, rout
           children: [
             new GestureDetector(
               onTap: (){
-                showModalBottomSheet<Null>(context: context, builder: (BuildContext context) {
-                  return new Container(
-                    height: 500.0,
-                      child: new Padding(
-                          padding: const EdgeInsets.all(32.0),
-                          child: new Text('This is the modal bottom sheet. Click anywhere to dismiss.',
-                              textAlign: TextAlign.center,
-                              style: new TextStyle(
-                                  color: Theme.of(context).accentColor,
-                                  fontSize: 24.0
-                              )
-                          )
-                      )
-                  );
-                });
+                Navigator.of(context).pushNamed(routeContext);
               },
               child: new Container(
                 child: new Text(

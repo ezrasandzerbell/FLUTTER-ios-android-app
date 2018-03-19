@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'main-footer.dart';
 import 'full-width-button.dart';
+import 'full-screen-dialog.dart';
 
 class dayHourAvailability extends StatelessWidget {
   dayHourAvailability({Key key, this.title}) : super(key: key);
@@ -64,13 +65,13 @@ class dayHourAvailability extends StatelessWidget {
               physics: new NeverScrollableScrollPhysics(),
               children: [
                 titleTextSection("Tap To Edit"),
-                fullWidthButton("Monday", whiteColor, context, "signInPage", "CLOSED"),
-                fullWidthButton("Tuesday", whiteColor, context, "signInPage"),
-                fullWidthButton("Wednesday", whiteColor, context, "signInPage"),
-                fullWidthButton("Thursday", whiteColor, context, "signInPage"),
-                fullWidthButton("Friday", whiteColor, context, "signInPage"),
-                fullWidthButton("Saturday", whiteColor, context, "signInPage"),
-                fullWidthButton("Sunday", whiteColor, context, "signInPage"),
+                fullWidthButton("Monday", whiteColor, context, fullScreenDialogue.routeName, "CLOSED"),
+                fullWidthButton("Tuesday", whiteColor, context, fullScreenDialogue.routeName),
+                fullWidthButton("Wednesday", whiteColor, context, fullScreenDialogue.routeName),
+                fullWidthButton("Thursday", whiteColor, context, fullScreenDialogue.routeName),
+                fullWidthButton("Friday", whiteColor, context, fullScreenDialogue.routeName),
+                fullWidthButton("Saturday", whiteColor, context, fullScreenDialogue.routeName),
+                fullWidthButton("Sunday", whiteColor, context, fullScreenDialogue.routeName),
               ],
             ),
           ]
