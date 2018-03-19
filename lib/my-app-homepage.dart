@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'package:carousel/carousel.dart';
 import 'sign-up-p1.dart';
+import 'full-screen-dialog.dart';
 import 'main-footer.dart';
 
 class MyAppHomePage extends StatelessWidget {

@@ -6,6 +6,7 @@ import 'sign-up-services.dart';
 import 'day-hour-availability.dart';
 import 'sign-up-location.dart';
 import 'sign-up-almost-done.dart';
+import 'full-screen-dialog.dart';
 
 void main() {
   runApp(new MyApp());
@@ -22,6 +23,7 @@ class MyApp extends StatelessWidget {
       dayHourAvailability.routeName: (BuildContext context) => new dayHourAvailability(title: "dayHourAvailability"),
       signUpLocation.routeName: (BuildContext context) => new signUpLocation(title: "signUpLocation"),
       signUpAlmostDone.routeName: (BuildContext context) => new signUpAlmostDone(title: "signUpAlmostDone"),
+      fullScreenDialogue.routeName: (BuildContext context) => new fullScreenDialogue(title: "fullScreenDialogue"),
     };
 
     return new MaterialApp(

@@ -15,14 +15,28 @@ Widget fullWidthButton(String label, Color colorCode, BuildContext context, rout
         ),
     ),
     child: new Row(
-      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+      mainAxisAlignment: MainAxisAlignment.start,
       children: [
         new Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             new GestureDetector(
               onTap: (){
-                print("hello");
+                showModalBottomSheet<Null>(context: context, builder: (BuildContext context) {
+                  return new Container(
+                    height: 500.0,
+                      child: new Padding(
+                          padding: const EdgeInsets.all(32.0),
+                          child: new Text('This is the modal bottom sheet. Click anywhere to dismiss.',
+                              textAlign: TextAlign.center,
+                              style: new TextStyle(
+                                  color: Theme.of(context).accentColor,
+                                  fontSize: 24.0
+                              )
+                          )
+                      )
+                  );
+                });
               },
               child: new Container(
                 child: new Text(
@@ -37,6 +51,7 @@ Widget fullWidthButton(String label, Color colorCode, BuildContext context, rout
             ),
           ],
         ),
+
       ],
     ),
   );
