@@ -81,7 +81,7 @@ class signUpAlmostDone extends StatelessWidget {
       child: new Row(
         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         children: [
-          footerLink('CONTINUE', Colors.grey, context, "signUpPage"),
+          footerLink('CONTINUE', pinkColor, context, "signUpPage"),
         ],
       ),
     );

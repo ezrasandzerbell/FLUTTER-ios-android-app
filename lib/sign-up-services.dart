@@ -29,7 +29,7 @@ class signUpPageServices extends StatelessWidget {
       child: new Row(
         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         children: [
-          footerLink('CONTINUE', Colors.grey, context, "dayHourAvailability"),
+          footerLink('CONTINUE', pinkColor, context, "dayHourAvailability"),
         ],
       ),
     );
@@ -52,7 +52,7 @@ class signUpPageServices extends StatelessWidget {
 
       Widget currentPageView = new Scaffold(
         appBar: new AppBar(
-          backgroundColor: pinkColor,
+          backgroundColor: Colors.black,
           title: new Text("Services"),
         ),
         body: new Stack (

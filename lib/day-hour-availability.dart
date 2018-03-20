@@ -30,7 +30,7 @@ class dayHourAvailability extends StatelessWidget {
       child: new Row(
         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         children: [
-          footerLink('CONTINUE', Colors.grey, context, "signUpLocation"),
+          footerLink('CONTINUE', pinkColor, context, "signUpLocation"),
         ],
       ),
     );
@@ -53,7 +53,7 @@ class dayHourAvailability extends StatelessWidget {
 
     Widget currentPageView = new Scaffold(
       appBar: new AppBar(
-        backgroundColor: pinkColor,
+        backgroundColor: Colors.black,
         title: new Text("Hours"),
       ),
       body: new Stack (

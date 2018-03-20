@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'main-footer.dart';
+import 'main.dart';
 
 class signUpPageOne extends StatelessWidget {
   signUpPageOne({Key key, this.title}) : super(key: key);
@@ -75,7 +76,7 @@ class signUpPageOne extends StatelessWidget {
       child: new Row(
         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         children: [
-          footerLink('CONTINUE', Colors.grey, context,  "signUpServices"),
+          footerLink('CONTINUE', pinkColor, context,  "signUpServices"),
         ],
       ),
     );
@@ -89,7 +90,7 @@ class signUpPageOne extends StatelessWidget {
             new ListView(
               physics: new NeverScrollableScrollPhysics(),
               children: [
-                style360Logo,
+                new CameraApp(),
                 signUpForm
               ],
             ),

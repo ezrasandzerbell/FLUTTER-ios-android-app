@@ -37,14 +37,14 @@ class signUpLocation extends StatelessWidget {
       child: new Row(
         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         children: [
-          footerLink('CONTINUE', Colors.grey, context, "signUpAlmostDone"),
+          footerLink('CONTINUE', pinkColor, context, "signUpAlmostDone"),
         ],
       ),
     );
 
     Widget currentPageView = new Scaffold(
       appBar: new AppBar(
-        backgroundColor: pinkColor,
+        backgroundColor: Colors.black,
         title: new Text("Location"),
       ),
       body: new Stack (
