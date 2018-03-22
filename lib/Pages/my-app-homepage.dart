@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'package:carousel/carousel.dart';
-import 'sign-up-p1.dart';
-import 'full-screen-dialog.dart';
-import 'main-footer.dart';
+import 'package:sightworks_flutter/Pages/sign-up-p1.dart';
+import 'package:sightworks_flutter/Pages/full-screen-dialog.dart';
+import 'package:sightworks_flutter/GlobalWidgets/main-footer.dart';
 
 class MyAppHomePage extends StatelessWidget {
   @override Widget build(BuildContext context) {
@@ -45,7 +45,7 @@ class MyAppHomePage extends StatelessWidget {
 
     Widget getStartedButton = new Align(
       alignment: const Alignment(0.0, -1.0),
-      child: new FlatButton(
+      child: new RaisedButton(
         child: new Text (
           "GET STARTED",
           style: new TextStyle(
@@ -54,6 +54,7 @@ class MyAppHomePage extends StatelessWidget {
             color: const Color(0xFFFAFAFA),
           ),
         ),
+        elevation: 2.0,
         color: const Color(0xFF424242),
         padding: const EdgeInsets.only(left: 80.0, right: 80.0),
         onPressed: (){

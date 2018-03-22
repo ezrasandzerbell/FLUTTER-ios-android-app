@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
-import 'my-app-homepage.dart';
-import 'sign-in-page.dart';
-import 'sign-up-p1.dart';
-import 'sign-up-services.dart';
-import 'day-hour-availability.dart';
-import 'sign-up-location.dart';
-import 'sign-up-almost-done.dart';
-import 'full-screen-dialog.dart';
+import 'package:sightworks_flutter/Pages/my-app-homepage.dart';
+import 'package:sightworks_flutter/Pages/sign-in-page.dart';
+import 'package:sightworks_flutter/Pages/sign-up-p1.dart';
+import 'package:sightworks_flutter/Pages/sign-up-services.dart';
+import 'package:sightworks_flutter/Pages/day-hour-availability.dart';
+import 'package:sightworks_flutter/Pages/sign-up-location.dart';
+import 'package:sightworks_flutter/Pages/sign-up-almost-done.dart';
+import 'package:sightworks_flutter/Pages/full-screen-dialog.dart';
 import 'dart:async';
 import 'package:camera/camera.dart';
 
@@ -15,6 +15,8 @@ Future main() async{
   cameras = await availableCameras();
   runApp(new MyApp());
 }
+
+//camera code starts here
 
 List<CameraDescription> cameras;
 
@@ -56,7 +58,7 @@ class _CameraAppState extends State {
   }
 }
 
-
+// camera code ends here
 
 class MyApp extends StatelessWidget {
   @override
@@ -67,7 +69,7 @@ class MyApp extends StatelessWidget {
       signInPage.routeName: (BuildContext context) => new signInPage(title: "signInPage"),
       signUpPageServices.routeName: (BuildContext context) => new signUpPageServices(title: "signUpPageServices"),
       dayHourAvailability.routeName: (BuildContext context) => new dayHourAvailability(title: "dayHourAvailability"),
-      signUpLocation.routeName: (BuildContext context) => new signUpLocation(title: "signUpLocation"),
+      signUpLocationState.routeName: (BuildContext context) => new signUpLocation(title: "signUpLocation"),
       signUpAlmostDone.routeName: (BuildContext context) => new signUpAlmostDone(title: "signUpAlmostDone"),
       fullScreenDialogue.routeName: (BuildContext context) => new fullScreenDialogue(title: "fullScreenDialogue"),
     };

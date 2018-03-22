@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
-import 'main-footer.dart';
+import 'package:sightworks_flutter/GlobalWidgets/main-footer.dart';
 
 class signInPage extends StatelessWidget {
   signInPage({Key key, this.title}) : super(key: key);

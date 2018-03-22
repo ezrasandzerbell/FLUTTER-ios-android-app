@@ -1,14 +1,23 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
-import 'main-footer.dart';
-import 'full-width-button.dart';
+import 'package:sightworks_flutter/GlobalWidgets/main-footer.dart';
+import 'package:sightworks_flutter/GlobalWidgets/full-width-button.dart';
 
-class signUpLocation extends StatelessWidget {
+class signUpLocation extends StatefulWidget {
+  @override
   signUpLocation({Key key, this.title}) : super(key: key);
+  final String title;
+
+  signUpLocationState createState() {
+    return new signUpLocationState();
+  }
+}
+
+class signUpLocationState extends State<signUpLocation> {
+
 
   static const String routeName = "/signUpLocation";
 
-  final String title;
   var whiteColor = const Color(0xFFeceff1);
   var pinkColor = const Color(0xFFf735e9);
 

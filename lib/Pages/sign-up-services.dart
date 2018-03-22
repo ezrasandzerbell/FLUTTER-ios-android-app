@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
-import 'main-footer.dart';
-import 'full-width-button.dart';
+import '../GlobalWidgets/main-footer.dart';
+import '../GlobalWidgets/full-width-button.dart';
 
 class signUpPageServices extends StatelessWidget {
   signUpPageServices({Key key, this.title}) : super(key: key);

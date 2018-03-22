@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
-import 'main-footer.dart';
-import 'main.dart';
+import '../GlobalWidgets/main-footer.dart';
+import '../main.dart';
 
 class signUpPageOne extends StatelessWidget {
   signUpPageOne({Key key, this.title}) : super(key: key);
@@ -11,13 +11,21 @@ class signUpPageOne extends StatelessWidget {
   final String title;
 
   @override Widget build(BuildContext context) {
-    Widget style360Logo = new Container(
+
+    var cameraChild = new Image.asset(
+      'images/camera.png',
+      width: 130.0,
+      height: 130.0,
+    );
+
+    Widget cameraIcon = new Container(
       padding: const EdgeInsets.only(top: 70.0, bottom: 50.0),
-      child: new Image.asset(
-        'images/camera.png',
-        width: 130.0,
-        height: 130.0,
-      ),
+      child: new GestureDetector(
+        onTap: (){
+          new CameraApp();
+        },
+          child: cameraChild,
+      )
     );
 
     Widget formListTitleDefault(arg) {
@@ -90,7 +98,7 @@ class signUpPageOne extends StatelessWidget {
             new ListView(
               physics: new NeverScrollableScrollPhysics(),
               children: [
-                new CameraApp(),
+                cameraIcon,
                 signUpForm
               ],
             ),

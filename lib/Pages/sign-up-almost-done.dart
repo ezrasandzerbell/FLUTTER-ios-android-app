@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
-import 'main-footer.dart';
+import '../GlobalWidgets/main-footer.dart';
 
 class signUpAlmostDone extends StatelessWidget {
   signUpAlmostDone({Key key, this.title}) : super(key: key);

@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
-import 'main-footer.dart';
-import 'full-width-button.dart';
-import 'full-screen-dialog.dart';
+import '../GlobalWidgets/main-footer.dart';
+import '../GlobalWidgets/full-width-button.dart';
+import 'package:sightworks_flutter/Pages/full-screen-dialog.dart';
 
 class dayHourAvailability extends StatelessWidget {
   dayHourAvailability({Key key, this.title}) : super(key: key);

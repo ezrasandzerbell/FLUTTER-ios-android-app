@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
-import 'sign-up-services.dart';
-import 'sign-up-p1.dart';
-import 'sign-in-page.dart';
-import 'day-hour-availability.dart';
-import 'sign-up-location.dart';
-import 'sign-up-almost-done.dart';
-import 'full-screen-dialog.dart';
+import 'package:sightworks_flutter/Pages/sign-up-services.dart';
+import 'package:sightworks_flutter/Pages/sign-up-p1.dart';
+import 'package:sightworks_flutter/Pages/sign-in-page.dart';
+import 'package:sightworks_flutter/Pages/day-hour-availability.dart';
+import 'package:sightworks_flutter/Pages/sign-up-location.dart';
+import 'package:sightworks_flutter/Pages/sign-up-almost-done.dart';
+import 'package:sightworks_flutter/Pages/full-screen-dialog.dart';
 
 var whiteColor = const Color(0xFFeceff1);
 var pinkColor = const Color(0xFFf735e9);
@@ -41,7 +41,7 @@ Widget footerLink(String label, Color colorCode, BuildContext context, routeCont
             break;
 
             case "signUpLocation": {
-              Navigator.of(context).pushNamed(signUpLocation.routeName);
+              Navigator.of(context).pushNamed(signUpLocationState.routeName);
             }
             break;
 

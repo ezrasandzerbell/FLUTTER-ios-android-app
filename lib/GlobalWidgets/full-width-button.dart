@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
-import 'full-screen-dialog.dart';
+import 'package:sightworks_flutter/Pages/full-screen-dialog.dart';
 
 
 Widget fullWidthButton(String label, Color colorCode, BuildContext context, routeContext, [availabilityHours]) {
