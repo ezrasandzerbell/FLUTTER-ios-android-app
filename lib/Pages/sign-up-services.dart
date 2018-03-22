@@ -3,12 +3,20 @@ import 'package:flutter/rendering.dart';
 import '../GlobalWidgets/main-footer.dart';
 import '../GlobalWidgets/full-width-button.dart';
 
-class signUpPageServices extends StatelessWidget {
-  signUpPageServices({Key key, this.title}) : super(key: key);
-
-  static const String routeName = "/signUpPageServices";
+class signUpPageServices extends StatefulWidget {
+  @override
 
   final String title;
+  signUpPageServices({Key key, this.title}) : super(key: key);
+  static const String routeName = "/signUpPageServices";
+
+  signUpPageServicesState createState() {
+    return new signUpPageServicesState();
+  }
+}
+
+class signUpPageServicesState extends State<signUpPageServices> {
+
   var whiteColor = const Color(0xFFeceff1);
   var pinkColor = const Color(0xFFf735e9);
 

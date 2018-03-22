@@ -3,12 +3,20 @@ import 'package:flutter/rendering.dart';
 import '../GlobalWidgets/main-footer.dart';
 import '../main.dart';
 
-class signUpPageOne extends StatelessWidget {
-  signUpPageOne({Key key, this.title}) : super(key: key);
-
-  static const String routeName = "/signUpPageOne";
+class signUpPageOne extends StatefulWidget {
+  @override
 
   final String title;
+  signUpPageOne({Key key, this.title}) : super(key: key);
+  static const String routeName = "/signUpPageOne";
+
+  signUpPageOneState createState() {
+    return new signUpPageOneState();
+  }
+
+}
+
+class signUpPageOneState extends State<signUpPageOne> {
 
   @override Widget build(BuildContext context) {
 

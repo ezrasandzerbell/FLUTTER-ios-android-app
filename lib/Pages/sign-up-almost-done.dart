@@ -2,12 +2,20 @@ import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import '../GlobalWidgets/main-footer.dart';
 
-class signUpAlmostDone extends StatelessWidget {
-  signUpAlmostDone({Key key, this.title}) : super(key: key);
-
-  static const String routeName = "/signUpAlmostDone";
+class signUpAlmostDone extends StatefulWidget {
+  @override
 
   final String title;
+  signUpAlmostDone({Key key, this.title}) : super(key: key);
+  static const String routeName = "/signUpAlmostDone";
+
+  signUpAlmostDoneState createState() {
+    return new signUpAlmostDoneState();
+  }
+}
+
+class signUpAlmostDoneState extends State<signUpAlmostDone> {
+
   var whiteColor = const Color(0xFFeceff1);
   var pinkColor = const Color(0xFFf735e9);
   var regular = FontWeight.w300;
