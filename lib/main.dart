@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:sightworks_flutter/Pages/my-app-homepage.dart';
-import 'package:sightworks_flutter/Pages/sign-in-page.dart';
-import 'package:sightworks_flutter/Pages/sign-up-p1.dart';
+import 'package:sightworks_flutter/Pages/homepage.dart';
+import 'package:sightworks_flutter/Pages/sign-in.dart';
+import 'package:sightworks_flutter/Pages/sign-up-register.dart';
 import 'package:sightworks_flutter/Pages/sign-up-services.dart';
 import 'package:sightworks_flutter/Pages/day-hour-availability.dart';
 import 'package:sightworks_flutter/Pages/sign-up-location.dart';

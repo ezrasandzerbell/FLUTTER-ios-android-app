@@ -7,7 +7,8 @@ class signUpPageServices extends StatefulWidget {
   @override
 
   final String title;
-  signUpPageServices({Key key, this.title}) : super(key: key);
+  String firstName;
+  signUpPageServices({Key key, this.title, this.firstName}) : super(key: key);
   static const String routeName = "/signUpPageServices";
 
   signUpPageServicesState createState() {

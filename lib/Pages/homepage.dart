@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'package:carousel/carousel.dart';
-import 'package:sightworks_flutter/Pages/sign-up-p1.dart';
+import 'package:sightworks_flutter/Pages/sign-up-register.dart';
 import 'package:sightworks_flutter/Pages/full-screen-dialog.dart';
 import 'package:sightworks_flutter/GlobalWidgets/main-footer.dart';
 

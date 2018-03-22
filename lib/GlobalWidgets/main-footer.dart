@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'package:sightworks_flutter/Pages/sign-up-services.dart';
-import 'package:sightworks_flutter/Pages/sign-up-p1.dart';
-import 'package:sightworks_flutter/Pages/sign-in-page.dart';
+import 'package:sightworks_flutter/Pages/sign-up-register.dart';
+import 'package:sightworks_flutter/Pages/sign-in.dart';
 import 'package:sightworks_flutter/Pages/day-hour-availability.dart';
 import 'package:sightworks_flutter/Pages/sign-up-location.dart';
 import 'package:sightworks_flutter/Pages/sign-up-almost-done.dart';
@@ -13,7 +13,7 @@ var pinkColor = const Color(0xFFf735e9);
 
 
 
-Widget footerLink(String label, Color colorCode, BuildContext context, routeContext) {
+Widget footerLink(String label, Color colorCode, BuildContext context, routeContext, [stateDataArray]) {
   return new Column(
     mainAxisAlignment: MainAxisAlignment.center,
     children: [
@@ -31,7 +31,13 @@ Widget footerLink(String label, Color colorCode, BuildContext context, routeCont
             break;
 
             case "signUpServices": {
-              Navigator.of(context).pushNamed(signUpPageServices.routeName);
+              Navigator.push(
+                  context,
+                  new MaterialPageRoute(
+                      builder: (BuildContext context) =>
+                      new signUpPageServices(stateDataArray[0]: firstName)
+                  );
+              );
             }
             break;
 

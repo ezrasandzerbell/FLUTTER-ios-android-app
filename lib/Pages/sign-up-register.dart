@@ -18,7 +18,10 @@ class signUpPageOne extends StatefulWidget {
 
 class signUpPageOneState extends State<signUpPageOne> {
 
-  @override Widget build(BuildContext context) {
+  @override 
+  String firstName;
+  
+  Widget build(BuildContext context) {
 
     var cameraChild = new Image.asset(
       'images/camera.png',
@@ -44,6 +47,10 @@ class signUpPageOneState extends State<signUpPageOne> {
             hintColor: Colors.white, // underline color without focus
           ),
           child: new TextField(
+            onChanged: (String text) => setState(() {
+              firstName = text;
+              print("my name is " + firstName);
+            }),
             style: new TextStyle(color: const Color(0xFFeceff1)),
             decoration: new InputDecoration(
               hintText: arg,
