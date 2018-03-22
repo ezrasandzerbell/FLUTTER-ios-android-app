@@ -41,7 +41,7 @@ Widget footerLink(String label, Color colorCode, BuildContext context, routeCont
             break;
 
             case "signUpLocation": {
-              Navigator.of(context).pushNamed(signUpLocationState.routeName);
+              Navigator.of(context).pushNamed(signUpLocation.routeName);
             }
             break;
 

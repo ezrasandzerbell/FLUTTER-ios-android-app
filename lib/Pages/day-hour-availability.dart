@@ -4,12 +4,20 @@ import '../GlobalWidgets/main-footer.dart';
 import '../GlobalWidgets/full-width-button.dart';
 import 'package:sightworks_flutter/Pages/full-screen-dialog.dart';
 
-class dayHourAvailability extends StatelessWidget {
+class dayHourAvailability extends StatefulWidget {
+  @override
+  final String title;
   dayHourAvailability({Key key, this.title}) : super(key: key);
 
   static const String routeName = "/dayHourAvailability";
 
-  final String title;
+  dayHourAvailabilityState createState() {
+    return new dayHourAvailabilityState();
+  }
+}
+
+class dayHourAvailabilityState extends State {
+
   var whiteColor = const Color(0xFFeceff1);
   var pinkColor = const Color(0xFFf735e9);
 

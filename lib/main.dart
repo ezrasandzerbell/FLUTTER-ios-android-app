@@ -69,7 +69,7 @@ class MyApp extends StatelessWidget {
       signInPage.routeName: (BuildContext context) => new signInPage(title: "signInPage"),
       signUpPageServices.routeName: (BuildContext context) => new signUpPageServices(title: "signUpPageServices"),
       dayHourAvailability.routeName: (BuildContext context) => new dayHourAvailability(title: "dayHourAvailability"),
-      signUpLocationState.routeName: (BuildContext context) => new signUpLocation(title: "signUpLocation"),
+      signUpLocation.routeName: (BuildContext context) => new signUpLocation(title: "signUpLocation"),
       signUpAlmostDone.routeName: (BuildContext context) => new signUpAlmostDone(title: "signUpAlmostDone"),
       fullScreenDialogue.routeName: (BuildContext context) => new fullScreenDialogue(title: "fullScreenDialogue"),
     };

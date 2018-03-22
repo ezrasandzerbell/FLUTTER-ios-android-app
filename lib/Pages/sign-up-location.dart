@@ -8,15 +8,14 @@ class signUpLocation extends StatefulWidget {
   signUpLocation({Key key, this.title}) : super(key: key);
   final String title;
 
+  static const String routeName = "/signUpLocation";
+
   signUpLocationState createState() {
     return new signUpLocationState();
   }
 }
 
 class signUpLocationState extends State<signUpLocation> {
-
-
-  static const String routeName = "/signUpLocation";
 
   var whiteColor = const Color(0xFFeceff1);
   var pinkColor = const Color(0xFFf735e9);
