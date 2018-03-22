@@ -2,12 +2,18 @@ import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'package:sightworks_flutter/GlobalWidgets/main-footer.dart';
 
-class signInPage extends StatelessWidget {
+class signInPage extends StatefulWidget {
+  @override
+  final String title;
   signInPage({Key key, this.title}) : super(key: key);
-
   static const String routeName = "/signInPage";
 
-  final String title;
+  signInPageState createState() {
+    return new signInPageState();
+  }
+}
+
+class signInPageState extends State<signInPage> {
 
   @override Widget build(BuildContext context) {
     Widget style360Logo = new Container(

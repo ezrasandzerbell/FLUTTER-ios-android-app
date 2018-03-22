@@ -5,7 +5,16 @@ import 'package:sightworks_flutter/Pages/sign-up-p1.dart';
 import 'package:sightworks_flutter/Pages/full-screen-dialog.dart';
 import 'package:sightworks_flutter/GlobalWidgets/main-footer.dart';
 
-class MyAppHomePage extends StatelessWidget {
+class MyAppHomePage extends StatefulWidget {
+  @override
+
+  MyAppHomePageState createState() {
+    return new MyAppHomePageState();
+  }
+
+}
+
+class MyAppHomePageState extends State {
   @override Widget build(BuildContext context) {
     Widget style360Logo = new Container(
       padding: const EdgeInsets.only(top: 100.0, bottom: 200.0),
@@ -41,7 +50,6 @@ class MyAppHomePage extends StatelessWidget {
         ),
       ),
     );
-
 
     Widget getStartedButton = new Align(
       alignment: const Alignment(0.0, -1.0),
