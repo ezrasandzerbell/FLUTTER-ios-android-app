@@ -4,12 +4,13 @@ import '../GlobalWidgets/main-footer.dart';
 import '../GlobalWidgets/full-width-button.dart';
 
 class signUpPageServices extends StatefulWidget {
-  @override
+  signUpPageServices({Key key, this.title, this.firstName}) : super(key: key);
+  static const String routeName = "/signUpPageServices";
 
   final String title;
   String firstName;
-  signUpPageServices({Key key, this.title, this.firstName}) : super(key: key);
-  static const String routeName = "/signUpPageServices";
+
+
 
   signUpPageServicesState createState() {
     return new signUpPageServicesState();

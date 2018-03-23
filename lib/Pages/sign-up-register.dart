@@ -3,12 +3,12 @@ import 'package:flutter/rendering.dart';
 import '../GlobalWidgets/main-footer.dart';
 import '../main.dart';
 
-class signUpPageOne extends StatefulWidget {
-  @override
 
-  final String title;
+
+class signUpPageOne extends StatefulWidget {
   signUpPageOne({Key key, this.title}) : super(key: key);
   static const String routeName = "/signUpPageOne";
+  final String title;
 
   signUpPageOneState createState() {
     return new signUpPageOneState();
@@ -18,8 +18,9 @@ class signUpPageOne extends StatefulWidget {
 
 class signUpPageOneState extends State<signUpPageOne> {
 
-  @override 
+  @override
   String firstName;
+  List stateDataArray = [];
   
   Widget build(BuildContext context) {
 
@@ -46,14 +47,18 @@ class signUpPageOneState extends State<signUpPageOne> {
             primaryColor: const Color(0xFFf735e9), // underline color with focus
             hintColor: Colors.white, // underline color without focus
           ),
-          child: new TextField(
-            onChanged: (String text) => setState(() {
-              firstName = text;
-              print("my name is " + firstName);
-            }),
-            style: new TextStyle(color: const Color(0xFFeceff1)),
-            decoration: new InputDecoration(
-              hintText: arg,
+          child: new Form (
+            child: new TextFormField(
+              onFieldSubmitted : (String text) => setState(() {
+                firstName = text;
+                print("my name is " + firstName);
+              }),
+              style: new TextStyle(color: const Color(0xFFeceff1)),
+              decoration: new InputDecoration(
+                labelText: arg,
+              ),
+              validator: (val) => val.isEmpty? 'Username can\'t be empty.' : null,
+              onSaved: (val) => firstName = val,
             ),
           ),
         ),
@@ -99,7 +104,7 @@ class signUpPageOneState extends State<signUpPageOne> {
       child: new Row(
         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         children: [
-          footerLink('CONTINUE', pinkColor, context,  "signUpServices"),
+          footerLink('CONTINUE', pinkColor, context,  "signUpServices", firstName),
         ],
       ),
     );

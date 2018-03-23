@@ -13,7 +13,7 @@ var pinkColor = const Color(0xFFf735e9);
 
 
 
-Widget footerLink(String label, Color colorCode, BuildContext context, routeContext, [stateDataArray]) {
+Widget footerLink(String label, Color colorCode, BuildContext context, routeContext, [firstName]) {
   return new Column(
     mainAxisAlignment: MainAxisAlignment.center,
     children: [
@@ -35,8 +35,8 @@ Widget footerLink(String label, Color colorCode, BuildContext context, routeCont
                   context,
                   new MaterialPageRoute(
                       builder: (BuildContext context) =>
-                      new signUpPageServices(stateDataArray[0]: firstName)
-                  );
+                      new signUpPageServices()
+                  )
               );
             }
             break;
